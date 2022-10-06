@@ -16,6 +16,7 @@ export default function Makeup(){
     const { currentUser } = useSelector((state) => state.user);
     // console.log(currentUser._id,"currrrrrr")
     var uid=currentUser._id;
+    console.log(uid)
 
 
 
