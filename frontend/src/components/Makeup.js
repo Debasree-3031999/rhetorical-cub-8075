@@ -1,28 +1,40 @@
-import axios from "axios";
-import React from "react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import "./Makeup.css";
-import { useSelector } from "react-redux";
+
+import axios from 'axios'
+import React from 'react'
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import './Makeup.css';
+import { useSelector } from 'react-redux';
+import Star from './Rating'
+import Rating from 'react-rating'
+
+
+
 // import { Link } from 'react-router-dom';
-export default function Makeup() {
-  const [data, setData] = useState([]);
-  const { currentUser } = useSelector((state) => state.user);
-  // console.log(currentUser._id,"currrrrrr")
-  var uid = currentUser._id;
+export default function Makeup(){
+    const [data, setData] = useState([])
+    const { currentUser } = useSelector((state) => state.user);
+    // console.log(currentUser._id,"currrrrrr")
+    var uid=currentUser._id;
+    console.log(uid)
 
-  const getData = async () => {
-    try {
-      const res = await axios.get(
-        "https://sugercos.herokuapp.com/api/products"
-      );
-      const data = await res.data;
-      setData(data);
 
-      // console.log('data: ', data)
-    } catch (error) {
-      console.log("error: ", error);
+
+    const getData = async () => {
+      try {
+        const res = await axios.get(
+          "http://localhost:8080/api/products"
+        )
+        const data = await res.data
+        setData(data)
+
+        // console.log('data: ', data)
+
+      } catch (error) {
+        console.log('error: ', error)
+      }
+
     }
   };
 
@@ -70,7 +82,18 @@ export default function Makeup() {
             alt="banner"
           />
         </div>
-      </div>
+
+        </div>
+        
+
+
+
+<div className='afterbanner' style={{display:"flex", justifyContent:"space-between"}}>
+
+  <div className='afterbanner_left'style={{marginLeft:"4%"}}>
+
+      <div style={{display:"flex",justifyContent:"space-between"}}>
+
 
       <div
         className="afterbanner"
@@ -127,6 +150,67 @@ export default function Makeup() {
             </select>
           </div>
         </div>
+
+
+</div>  
+          
+          <div id="prodData">
+            
+            {
+              data.map((elem,i) => {
+                return (
+                  <div key={i}>
+                  <Link to={{
+                    pathname:`/makeup/${elem._id}`,
+                  state:data}}
+                  key={i}>
+                        <div
+                            id="mapDataElem"
+                            className="link"
+                            key={elem._id.$oid}
+                        >
+                            <img
+                            id="prodDataImage"
+                            src={elem.ImageUrl}
+                            alt={elem.Title}/>
+
+                            <p>
+                            {elem.Title}
+                            </p>
+
+                            <p>
+                            {elem.Currency}
+                            {elem.Price}
+                            </p>
+
+                            <p>
+                            <Rating
+                            emptySymbol="far fa-star fa-0.5x"
+                            fullSymbol="fa fa-star fa-0.5x"
+                            initialRating={elem.Rating}
+                            
+                            readonly={true}
+                          />
+                             {elem.RatingTotal}
+                            </p>
+
+                            <div id="prodDataHover">
+                            <div>
+                                <img style={{margin:"auto",marginTop:"10%"}}
+                                src="https://i.ibb.co/QpM4sbW/1077035.png"
+                                alt="Wishlist"
+                                />
+                            </div>
+                            
+                            <button onClick={()=>handleaddCart(elem)}>ADD TO CART</button>
+                            </div>
+                        </div>
+                        </Link>
+                        </div>
+                )
+              })}
+          </div>
+
       </div>
 
       <div id="prodData">
