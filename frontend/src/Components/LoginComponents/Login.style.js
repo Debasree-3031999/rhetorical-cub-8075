@@ -6,11 +6,12 @@ export const LoginContainer = styled.div`
   background-image: url("https://in.sugarcosmetics.com/Login_bg.svg");
   box-shadow: 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   z-index: 100;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   height: 100vh;
   padding: 10px 20px;
+  transition: width 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 `;
 export const LoginHeader = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ export const LoginHeader = styled.div`
   text-align: center;
   color: #fff;
 `;
+export const LoginHeaderClose = styled.div``;
 export const LoginHeaderTitle = styled.p`
   font-weight: 600;
   font-size: 24px;

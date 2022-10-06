@@ -6,15 +6,12 @@ SUGAR Cosmetics is a cruelty-free makeup brand that is high on style and higher 
 
 ## Deployed Site
 
-[SugarCosmetics Clone]()
+[SugarCosmetics Clone](https://sugarcosmeticnem201.netlify.app/)
 
 ### Presentation
 
-[Presentation Video]()
+[Presentation Video](https://drive.google.com/file/d/1y6T2wkl-xWzEMbch7AIP4pWUFPqsjnol/view?usp=sharing)
 
-### Blog
-
-[SugarCosmetics Clone Blog]()
 
 ### `Tech Stack Used in FrontEnd`
 
@@ -36,7 +33,46 @@ SUGAR Cosmetics is a cruelty-free makeup brand that is high on style and higher 
 - [@Mohd-Haroon-Qureshi](https://github.com/HarshVardhan-dev)
 - [@Debasree-Ghosh](https://github.com/Debasree-3031999)
 
-## Wbsite Sneak Peeks
+## Website Sneak Peeks
+
+### Sneak Peeks on Large Devices
+
+- **Landing Page**
+
+![Landing Page](./Website%20Sneak%20Peeks/LandingPage.png?raw=true)
+
+- **Login Page**
+
+![Login Page](./Website%20Sneak%20Peeks/Login.png?raw=true)
+
+- **Register Page**
+
+![Register Page](./Website%20Sneak%20Peeks/Register.png?raw=true)
+
+- **Makeup Product Page**
+
+![Makeup Product Page](./Website%20Sneak%20Peeks/Makup.png)
+
+
+- **Product Description Page**
+
+![Product Description Page](./Website%20Sneak%20Peeks/Description.png?raw=true)
+
+- **Cart Page**
+
+![Cart Page](./Website%20Sneak%20Peeks/Cart.png?raw=true)
+
+- **Address Form**
+
+![Address Form](./Website%20Sneak%20Peeks/Address.png?raw=true)
+
+- **Payment Page**
+
+![Payment Page](./Website%20Sneak%20Peeks/Payment.png?raw=true)
+
+- **Footer Page**
+
+![Footer Page](./Website%20Sneak%20Peeks/Footer.png?raw=true)
 
 
 # Getting Started with Create React App

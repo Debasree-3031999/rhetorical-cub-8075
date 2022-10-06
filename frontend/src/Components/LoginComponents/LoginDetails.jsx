@@ -31,7 +31,7 @@ import {
   loginStart,
   loginSuccess,
 } from "../../redux/userReducer";
-
+import { ToastContainer, toast } from "react-toastify";
 const LoginDetails = () => {
   const navigate = useNavigate();
   let mobileNumber = localStorage.getItem("mobile");
@@ -50,9 +50,11 @@ const LoginDetails = () => {
         mobileNumber,
       });
       dispatch(loginSuccess(res.data));
+      toast.success("Registered Successfully");
       navigate("/");
     } catch (error) {
       dispatch(loginFailure());
+      toast.error("Something went wrong");
     }
   };
   return (
@@ -118,6 +120,7 @@ const LoginDetails = () => {
           </MobileOTPBoxBottomMessageLink>
         </MobileOTPBoxBottomMessageLinkDiv>
       </MobileOTPBoxBottomMessage>
+      <ToastContainer />
     </LoginContainer>
   );
 };

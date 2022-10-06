@@ -1,7 +1,6 @@
 import { Address } from "../Models/addressModel.js";
 
 export const getAddress = async (req, res) => {
-  console.log(req.params.id)
   try {
     const add = await Address.findOne({userId:req.params.id})
     res.status(200).send(add);

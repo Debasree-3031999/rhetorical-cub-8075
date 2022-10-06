@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 export const Checkout = () => {
-    const { total } = useSelector((state) => state.cart);
+    // const { total } = useSelector((state) => state.cart);
     const { currentUser } = useSelector((state) => state.user);
     const navigate = useNavigate();
     const [address,setAddress] = React.useState({})
@@ -169,16 +169,16 @@ export const Checkout = () => {
                     <Flex w="100%" justifyContent="space-between" mt="0.25rem" mb="0.25rem">
                         <Flex>
                             <Text fontSize="13px" color="#6c757d">Full Name</Text>
-                            <Text fontSize="14px" pl="0.25rem" fontWeight="bold" color="#6c757d">Haroon Qureshi</Text>
+                            <Text fontSize="14px" pl="0.25rem" fontWeight="bold" color="#6c757d">{currentUser.firstName} {currentUser.lastName}</Text>
                         </Flex>
                         <Flex>
                             <Text fontSize="13px" color="#6c757d">Phone</Text>
-                            <Text fontSize="14px" pl="0.25rem" fontWeight="bold" color="#6c757d">8529637410</Text>
+                            <Text fontSize="14px" pl="0.25rem" fontWeight="bold" color="#6c757d">{currentUser.mobileNumber}</Text>
                         </Flex>
                     </Flex>
                     <Flex>
                             <Text fontSize="13px" color="#6c757d">Email</Text>
-                            <Text fontSize="14px" pl="0.25rem" fontWeight="bold" color="#6c757d">Haroon@gmail.com</Text>
+                            <Text fontSize="14px" pl="0.25rem" fontWeight="bold" color="#6c757d">{currentUser.email}</Text>
                         </Flex>
                 </Box>
                 <Box w="100%" pr="0.5rem" pl="0.5rem" mt="0.25rem">

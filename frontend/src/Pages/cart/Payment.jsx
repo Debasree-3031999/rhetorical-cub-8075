@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 export const Payment = () => {
-    const { total } = useSelector((state) => state.cart);
+    // const { total } = useSelector((state) => state.cart);
     const { currentUser } = useSelector((state) => state.user);
     const navigate = useNavigate();
     const [pay,setpay] = React.useState(false) 

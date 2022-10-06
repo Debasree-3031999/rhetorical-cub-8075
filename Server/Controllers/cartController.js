@@ -3,13 +3,11 @@ import { Product } from "../Models/productModel.js";
 
 export const getCartData = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   if (!id) {
     res.status(400).send({ message: "unauthorised" });
   }
   try {
     const data = await Cartmodel.find({ userId: id });
-    console.log("cartdata", data);
     res.status(200).send(data);
   } catch (e) {
     res.status(404).send({ message: "error occurred" });
@@ -18,8 +16,6 @@ export const getCartData = async (req, res) => {
 
 export const postToCart = async (req, res) => {
   const data = req.body;
-  // const userId = req.user.id;
-  console.log("datazzzz", data);
   if (!data) {
     res.status(400).send({ message: "no valid data" });
   }
